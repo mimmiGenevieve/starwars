@@ -1,0 +1,215 @@
+* {
+	/* clean slate */
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #3598db;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+	position: relative;
+}
+
+/*
+*
+* ERROR-COMPONENT
+*
+*/
+.errorDiv {
+	margin: 50px auto;
+	text-align: center;
+	color: #c5c6cd;
+}
+
+.errorDiv img {
+	margin: 30px;
+	max-width: 100%;
+}
+
+.errorMsg {
+	background: lightgrey;
+	color: black;
+	font-family: "Courier New", Courier, monospace;
+	text-align: left;
+	border: 1px solid #344e60;
+	padding: 5px;
+	height: 50px;
+	width: 500px;
+	margin: 10px auto;
+}
+
+.errorDiv button {
+	padding: 10px;
+	margin: 20px;
+}
+
+/*
+* 
+* LIST OF FILMS
+*
+*/
+.filmsWrapper {
+	padding: 10px 5px 20px 5px;
+}
+
+.card {
+	background-color: #344e60;
+	color: #c5c6cd;
+	padding: 50px;
+	margin: 25px 0 0 0;
+	border: none;
+	display: block;
+	position: relative;
+	cursor: pointer;
+}
+
+.card p {
+	position: absolute;
+	bottom: 8px;
+	right: 16px;
+}
+
+/* 
+*
+* LOADING  COMPONENT 
+*
+*/
+#loadingComponent {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-color: #3598db;
+	opacity: 0.7;
+	z-index: 1;
+}
+
+#loadingComponent svg {
+	margin-top: 10%;
+	font-size: 250px; /* just a lil' bigger */
+}
+
+/* 
+*
+* FILM-VIEW 
+* 
+*/
+.filmDataOverlay {
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	padding-bottom: 30px;
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.filmDataOverlay h2 {
+	display: none;
+}
+
+.filmDataOverlay h1 {
+	margin: 30px 0 30px 10px;
+}
+
+ul li {
+	margin: 20px 0 0 10px;
+	list-style-type: none; /* no styles thank you very much */
+}
+
+.closeBtn {
+	position: absolute;
+	right: 0;
+	padding: 20px;
+	cursor: pointer;
+}
+
+/*
+*
+* DESKTOP 
+*
+*/
+@media screen and (min-width: 1140px) {
+	body {
+		background-color: #34495e;
+	}
+
+	#root {
+		position: initial;
+	}
+
+	/*
+	* 
+	* LIST OF FILMS
+	*
+	*/
+	.filmsWrapper {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 100px;
+		justify-content: left;
+	}
+
+	.card {
+		background-color: #3598db;
+		text-align: center;
+		width: 23%;
+		margin: 1%;
+		box-sizing: border-box;
+		align-self: stretch;
+		border-radius: 10px;
+	}
+
+	.card p {
+		bottom: 8px;
+		right: 0;
+		left: 0;
+	}
+
+	/* 
+	*
+	* LOADING  COMPONENT 
+	*
+	*/
+	#loadingComponent {
+		top: 0;
+		color: #c5c6cd;
+		background-color: #34495e;
+	}
+
+	/* 
+	*
+	* FILM-VIEW 
+	* 
+	*/
+	.filmDataOverlay {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 50px auto;
+		width: 90%;
+		min-height: initial;
+		background-color: rgba(255, 255, 255, 1);
+	}
+
+	.filmDataOverlay h1 {
+		margin: 30px 0 30px 50px;
+	}
+
+	.filmDataOverlay h2 {
+		margin: 70px 0 -30px 50px;
+	}
+
+	ul {
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-flow: wrap column;
+		flex-flow: wrap column;
+		max-height: 800px;
+		margin: 50px;
+		max-width: 70%;
+	}
+}
